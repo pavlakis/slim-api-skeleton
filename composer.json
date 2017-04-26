@@ -12,7 +12,6 @@
     ],
     "autoload": {
         "psr-4": {
-            "MyApp\\Tests\\" : "tests/phpunit",
             "MyApp\\": "app/src"
         }
     },
