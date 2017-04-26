@@ -14,6 +14,7 @@ $container['notFoundHandler'] = function ($c) {
 
         return $response
             ->withStatus(404)
+            ->withHeader('Content-Type', 'application/json')
             ->withRedirect('/404');
     };
 };
