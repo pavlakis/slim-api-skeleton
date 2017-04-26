@@ -2,6 +2,7 @@
 // DIC configuration
 
 use MyApp\Action\Error\NotFoundAction;
+use MyApp\Action\Error\ServerErrorAction;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -14,6 +15,15 @@ $container['notFoundHandler'] = function ($c) {
         return $response
             ->withStatus(404)
             ->withRedirect('/404');
+    };
+};
+
+$container['errorHandler'] = function ($c) {
+    return function (Request $request, Response $response) use ($c) {
+
+        return $response
+            ->withStatus(500)
+            ->withRedirect('/oops');
     };
 };
 
@@ -41,5 +51,9 @@ $container['em'] = function ($c) {
 
 // Actions
 $container[NotFoundAction::class] = function ($c) {
-    return new \MyApp\Action\Error\NotFoundAction($c['logger']);
+    return new NotFoundAction($c['logger']);
+};
+
+$container[ServerErrorAction::class] = function ($c) {
+    return new ServerErrorAction($c['logger']);
 };
