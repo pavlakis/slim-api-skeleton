@@ -12,7 +12,7 @@ class NotFoundActionTest extends BaseTestCase
     {
         $response = $this->runApp('GET', '/no-endpoint');
 
-        $this->assertTrue($response->isNotFound());
-        $this->assertContains('application/json', $response->getHeaderLine('Content-type'));
+        static::assertTrue($response->isNotFound());
+        static::assertContains('application/json', $response->getHeaderLine('Content-type'));
     }
 }
