@@ -1,6 +1,5 @@
-# slim-api-skeleton
+# Slim API starter
 
-This is a simple Slim Framework API skeleton based off the Slim-Skeleton by @akrabat.
+Slim API starter is a *starter kit* using the Slim3 Framework combined with a number of useful packages for API architectures.
 
-It includes a list of packages useful for APIs.
-
+A small part of it was based on the Slim-Skeleton by @akrabat.
